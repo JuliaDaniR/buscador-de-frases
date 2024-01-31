@@ -1,0 +1,511 @@
+/* Estilo del contenedor del scroll */
+::-webkit-scrollbar {
+  width: 15px; /* Ancho del scroll */
+}
+
+/* Estilo de la barra de fondo */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color de fondo */
+}
+
+/* Estilo de la barra de desplazamiento */
+::-webkit-scrollbar-thumb {
+  background: #08324d;
+  border-radius: 3px;
+}
+
+/* Estilo de la esquina inferior derecha */
+::-webkit-scrollbar-corner {
+  background: #f1f1f1; /* Color de fondo */
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 940px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+header {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: bold;
+  margin: 2rem;
+  font-family: "Rubik Doodle Shadow", system-ui;
+}
+
+.titulo {
+  display: inline-block;
+  overflow: hidden; /* Oculta el exceso de contenido */
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+
+.titulo span {
+  display: inline-block;
+  transform: rotateY(360deg); /* Inicialmente, las letras estarán giradas */
+  animation: rotateLetter 10s linear infinite,
+    changeColor 6s ease-in-out infinite; /* Animación para rotar las letras */
+}
+
+@keyframes rotateLetter {
+  0% {
+    transform: rotateY(360deg);
+  } /* La letra gira una vuelta completa */
+  100% {
+    transform: rotateY(0deg);
+  } /* Vuelve a su posición inicial */
+}
+@keyframes changeColor {
+  0% {
+    color: rgb(1, 19, 43);
+  }
+  25% {
+    color: rgb(71, 71, 168);
+  }
+  50% {
+    color: rgb(0, 100, 128);
+  }
+  75% {
+    color: rgb(55, 0, 128);
+  }
+  100% {
+    color: rgb(89, 0, 255);
+  }
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.botones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  bottom: 50px;
+}
+
+.botones button {
+  margin: 15px;
+  padding: 10px 20px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 15px 15px 10px black;
+}
+
+.botones button:nth-child(odd) {
+  background-color: #174577;
+  color: #fff;
+  transition: all 1s;
+}
+.botones button:nth-child(odd):hover {
+  background-color: #e2e4e6;
+  color: #174577;
+  border: 1px solid #174577;
+}
+
+.botones button:nth-child(even) {
+  background-color: #1e8673;
+  color: #fff;
+  transition: all 1s;
+}
+.botones button:nth-child(even):hover {
+  background-color: #dbe2e1;
+  color: #1e8673;
+  border: 1px solid #1e8673;
+}
+
+.botones button:active,
+.botones button:focus {
+  background-color: #612079;
+  color: #fff;
+}
+
+.frase {
+  width: 70%;
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: flex-end;
+  text-align: center;
+  flex-wrap: wrap;
+  background-color: aliceblue;
+  border: 5px groove black;
+  padding: 0.5rem;
+  margin-bottom: 50px;
+  opacity: 0.8;
+  box-shadow: 10px 10px 5px black;
+  border-radius: 10px;
+}
+
+#texto-frase {
+  width: 100%;
+  line-height: 3rem;
+  justify-content: center;
+  color: rgb(9, 32, 36);
+  text-shadow: 8px 8px 3px rgb(235, 227, 227);
+  font-size: 2rem;
+  font-weight: 900;
+  font-family: "Indie Flower", cursive;
+  margin: 2rem 5re
+  m;
+  margin-bottom: 0;
+}
+
+.btn {
+  margin-top: 4rem;
+  width: 100%;
+}
+
+.btn button {
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  background-color: #154a46;
+  color: white;
+  border: 4px groove black;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.8s ease, transform 1s ease;
+}
+
+.btn button:hover {
+  background-color: #b6cbca;
+  color: rgb(19, 96, 81);
+  transform: scale(1.1);
+}
+
+.btn-idioma{
+  width: 100%;
+}
+.btn-idioma button{
+  padding: 4px 15px;
+  margin-top: 2rem;
+  font-size: .5rem;
+  background-color: #36154a;
+  color: white;
+  border: 4px groove black;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.8s ease, transform 1s ease;
+}
+
+.btn-idioma button:hover {
+  background-color: #c1b6cb;
+  color: rgb(96, 19, 86);
+  transform: scale(1);
+
+}
+
+.icono-copiar {
+  position: relative;
+  top: 0;
+  cursor: pointer;
+  font-size: 24px;
+  color: #601010;
+}
+
+.mensaje-copiado {
+  display: none;
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  background-color: #034d3d;
+  color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.titulo-traduccion{
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+#frase-traducida{
+  width: 100%;
+  font-size: 2rem;
+  height: 20%;
+  margin: 3rem;
+  padding: 1rem;
+  background-color: #77c1bb;
+  border: 3px groove #034d3d;
+  display: none;
+}
+section .btn {
+  display: flex;
+  width: 100%;
+  height: 150px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin: 1rem 2rem;
+}
+
+section .btn button {
+  margin: 0 3rem 1rem 3rem;
+  background-color: #601010;
+  color: #b6cbca;
+  box-shadow: -10px 10px 5px black;
+}
+
+section button:active,
+section button:focus {
+  background-color: #612079;
+  color: #fff;
+}
+
+.video {
+  display: flex;
+  margin-bottom: 8rem;
+  margin-left: 3rem;
+  background: linear-gradient(-45deg, #154a46, #77c1bb, #154a46, #77c1bb);
+  width: 400px;
+  height: 300px;
+  translate: 12rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+footer {
+  text-align: end;
+  margin: 3rem 2rem 2rem 0;
+  padding: 1rem;
+  background: linear-gradient(
+    45deg,
+    rgb(184, 87, 184),
+    rgb(74, 5, 104),
+    rgb(184, 87, 184),
+    rgb(74, 5, 104)
+  );
+  color: rgb(241, 244, 247);
+  border: 2px double rgb(89, 35, 171);
+  font-weight: 700;
+  font-size: 1.5rem;
+  translate: 180px 10rem;
+  border-radius: 5px;
+}
+
+.footer-text {
+  transition: transform 1.5s ease-in-out;
+  cursor: pointer;
+}
+
+.footer-text:hover {
+  transform: translateX(-400px);
+}
+
+/*Responsive*/
+@media (min-width: 1200px) {
+  body {
+    width: 1190px;
+  }
+  .icono-copiar {
+    right: -9rem;
+  }
+}
+
+@media (min-width: 771px) and (max-width: 1199px) {
+  body {
+    width: 1199px;
+  }
+  .icono-copiar {
+    right: -1rem;
+  }
+
+  .container-idioma{
+    width: 100%;
+  }
+  section .btn {
+    display: flex;
+    width: 20%;
+    height: 10px;
+    padding: 0.2rem;
+    margin-bottom: 5rem;
+  }
+  section .btn button {
+    margin: 2rem auto;
+    translate: 450px;
+    margin-inline: 2rem;
+  }
+  .container-video{
+    width: 100%;
+  }
+  .video {
+    width: 60%;
+    translate: 12rem;
+  }
+  .video iframe{
+    width: 80%;
+  }
+  footer {
+    translate: 140px -1rem;
+  }
+}
+
+/* Estilos para dispositivos móviles (por ejemplo, teléfonos) */
+@media (min-width: 500px) and (max-width: 770px) {
+  body {
+    width: 770px;
+  }
+  header {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 1rem;
+  }
+  .botones {
+    width: 75%;
+  }
+  .botones button {
+    margin: 10px;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
+  .frase {
+    width: 60%;
+    min-height: 150px;
+    padding-bottom: 3rem;
+  }
+  #texto-frase {
+    width: 90%;
+    line-height: 1.8rem;
+    font-size: 1.2rem;
+    padding: 0;
+    margin: 2rem 0;
+  }
+  #btn {
+    margin: 0;
+    padding: 1rem;
+    margin-bottom: 3rem;
+  }
+  .btn button {
+    font-size: 0.8rem;
+  }
+  section .btn {
+    display: flex;
+    width: 8%;
+    height: 10px;
+    padding: 0.2rem;
+    margin-bottom: 5rem;
+  }
+  section .btn button {
+    margin: 2rem 1rem;
+    translate: 240px;
+  }
+
+  .icono-copiar {
+    right: -14rem;
+    top: 1rem;
+  }
+
+  .container-video{
+    width: 100%;
+  }
+  .video {
+    translate: 9rem;
+  }
+  footer {
+    translate: 150px -5rem;
+    font-size: 0.8rem;
+    margin-top: 0;
+
+  }
+}
+/* Estilos para dispositivos móviles con un ancho de pantalla de 400 píxeles o menos */
+@media (min-width: 250px) and (max-width: 499px) {
+  body {
+    width: 499px;
+  }
+
+  main{
+    width: 100%;
+  }
+  header {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 1rem;
+  }
+  .botones {
+    flex-direction: column;
+    align-content: center;
+    align-items: stretch;
+  }
+  .botones button {
+    margin: 10px;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
+  .frase {
+    width: 65%;
+    min-height: 150px;
+  }
+  #texto-frase {
+    width: 100%;
+    line-height: 1.8rem;
+    font-size: 1.2rem;
+    padding: 0;
+    margin: 2rem 0;
+  }
+  #btn {
+    margin: 0;
+    padding: 1rem;
+    margin-bottom: 3rem;
+  }
+  .btn button {
+    font-size: 0.8rem;
+  }
+  section .btn {
+    display: flex;
+    width: 100%;
+    height: 10px;
+    margin-bottom: 5rem;
+    flex-wrap: wrap;
+  
+  }
+  section .btn button {
+    margin: 0.2rem;
+    width: 80%;
+    margin-right: 3rem;
+  }
+
+  .icono-copiar {
+    right: -9rem;
+  }
+
+  .video {
+    translate: 0rem;
+    width: 350px;
+    height: 200px;
+    margin-top: 10rem;
+    margin-right: 2rem;
+  }
+  .video iframe {
+    width: 250px;
+    height: 150px;
+  
+  }
+  footer {
+    translate: 140px -1rem;
+    font-size: 0.8rem;
+    margin-top: 0;
+  }
+}

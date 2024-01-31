@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buscador de Frases</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Playfair+Display:ital@1&family=Roboto:ital@1&family=Rubik+Burned&family=Rubik+Doodle+Shadow&family=Rubik+Glitch+Pop&family=Zeyada&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1 class="titulo">Buscador de Frases</h1>
+    </header>
+    <main class="container">
+      <nav class="botones">
+        <button
+          type="button"
+          id="frasesMotivacionales"
+          onclick="cambiarArray('frasesMotivacionales')"
+        >
+          Frases Motivacionales
+        </button>
+        <button
+          type="button"
+          id="mensajesAmorAmistad"
+          onclick="cambiarArray('mensajesAmorAmistad')"
+        >
+          Amor y Amistad
+        </button>
+        <button
+          type="button"
+          id="consejosBienestarMental"
+          onclick="cambiarArray('consejosBienestarMental')"
+        >
+          Consejos para el Bienestar Mental
+        </button>
+        <button
+          type="button"
+          id="frasesMotivacionalesTrabajo"
+          onclick="cambiarArray('frasesMotivacionalesTrabajo')"
+        >
+          Frases Motivacionales para el Trabajo
+        </button>
+        <button
+          type="button"
+          id="citasGratitud"
+          onclick="cambiarArray('citasGratitud')"
+        >
+          Gratitud
+        </button>
+        <button
+          type="button"
+          id="pensamientosPositivos"
+          onclick="cambiarArray('pensamientosPositivos')"
+        >
+          Pensamientos Positivos
+        </button>
+        <button
+          type="button"
+          id="curiosidadesOptimistas"
+          onclick="cambiarArray('curiosidadesOptimistas')"
+        >
+          Curiosidades Optimistas
+        </button>
+        <button
+          type="button"
+          id="anecdotasPositivas"
+          onclick="cambiarArray('anecdotasPositivas')"
+        >
+          Anecdotas Positivas
+        </button>
+        <button
+          type="button"
+          id="consejosDeVida"
+          onclick="cambiarArray('consejosDeVida')"
+        >
+          Consejos De Vida
+        </button>
+        <button
+          type="button"
+          id="reflexionesDiarias"
+          onclick="cambiarArray('reflexionesDiarias')"
+        >
+          Reflexiones Diarias
+        </button>
+        <button
+          type="button"
+          id="frasesInspiradoras"
+          onclick="cambiarArray('frasesInspiradoras')"
+        >
+          Frases Inspiradoras
+        </button>
+        <button
+          type="button"
+          id="refranesFamosos"
+          onclick="cambiarArray('refranesFamosos')"
+        >
+          Refranes Famosos
+        </button>
+        <button
+          type="button"
+          id="frasesFamosas"
+          onclick="cambiarArray('frasesFamosas')"
+        >
+          Frases Famosas
+        </button>
+      </nav>
+      <div class="frase">
+        <h1 id="texto-frase">
+          Bienvenido al Buscador de Frases.<br />Selecciona un idioma y tipo de
+          Frase 💫
+        </h1>
+        <div class="btn">
+          <button id="btn" type="submit">Mostrar nueva frase</button>
+        </div>
+        <br />
+        <section>
+          <h2 class="titulo-traduccion">Traducción</h2>
+          <div class="btn-idioma">
+            <button type="button" id="traduccion-es">
+              Traducir al Español
+            </button>
+            <button type="button" id="traduccion-en">Traducir al Inglés</button>
+            <button type="button" id="traduccion-it">
+              Traducir al Italiano
+            </button>
+            <button type="button" id="traduccion-fr">
+              Traducir al Francés
+            </button>
+          </div>
+        </section>
+        <div class="icono-copiar" onclick="copiarFrase()">
+          <i class="fas fa-copy"></i>
+        </div>
+        <!-- Div para mostrar la frase traducida -->
+        <div id="frase-traducida"></div>
+      </div>
+    </main>
+    <div id="mensaje-copiado" class="mensaje-copiado">
+      <p>La frase ha sido copiada al portapapeles</p>
+    </div>
+    <section class="container-idioma">
+      <div class="btn">
+        <button type="button" id="es" onclick="cambiarArray('es')">
+          Español
+        </button>
+        <button type="button" id="en" onclick="cambiarArray('en')">
+          Ingles
+        </button>
+        <button type="button" id="it" onclick="cambiarArray('it')">
+          Italiano
+        </button>
+        <button type="button" id="fr" onclick="cambiarArray('fr')">
+          Francés
+        </button>
+      </div>
+    </section>
+    <div class="container-video">
+    <div class="video">
+      <iframe
+        width="300"
+        height="215"
+        src="https://www.youtube.com/embed/fz8MfwMcNkQ?si=LrYolP162pJeVHdy"
+        frameborder="0"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+    <footer>
+      <p class="footer-text">&copy; Desarrollado por Julia Rodriguez</p>
+    </footer>
+  </body>
+</html>
